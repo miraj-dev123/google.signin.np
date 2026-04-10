@@ -3,98 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login to Play</title>
+    <title>Game Login</title>
     <style>
-        /* Modern UI Styling */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', sans-serif;
+            background: #1a1a2e; /* Dark game theme */
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            color: white;
         }
-
-        .login-container {
-            background: white;
+        .login-box {
+            background: #16213e;
             padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            width: 100%;
-            max-width: 350px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,255,255,0.2);
+            width: 320px;
             text-align: center;
+            border: 1px solid #0f3460;
         }
-
-        h2 { color: #333; margin-bottom: 25px; }
-
-        .input-group { text-align: left; margin-bottom: 15px; }
-
-        label { display: block; margin-bottom: 5px; color: #666; font-size: 14px; }
-
         input {
             width: 100%;
             padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            box-sizing: border-box; /* Prevents input from overflowing */
+            margin: 10px 0;
+            background: #0f3460;
+            border: 1px solid #e94560;
+            border-radius: 5px;
+            color: white;
+            box-sizing: border-box;
         }
-
-        .login-btn {
+        .teleport-btn {
             width: 100%;
             padding: 12px;
-            background: #764ba2;
+            background: #e94560;
             color: white;
             border: none;
-            border-radius: 6px;
-            font-size: 16px;
-            font-weight: bold;
+            border-radius: 5px;
             cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
             margin-top: 10px;
-            transition: background 0.3s;
+            transition: 0.3s;
         }
-
-        .login-btn:hover { background: #5a377e; }
-
-        .footer-text { margin-top: 20px; font-size: 13px; color: #888; }
-        
-        a { color: #764ba2; text-decoration: none; }
+        .teleport-btn:hover {
+            background: #ff2e63;
+            transform: scale(1.02);
+        }
     </style>
 </head>
 <body>
 
-    <div class="login-container">
+    <div class="login-box">
         <form id="loginForm">
-            <h2>Game Login</h2>
+            <h2>READY TO PLAY?</h2>
+            <input type="text" placeholder="Player Name" required>
+            <input type="password" placeholder="Passcode" required>
             
-            <div class="input-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" required placeholder="Enter username">
-            </div>
-
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" required placeholder="Enter password">
-            </div>
-
-            <!-- This button triggers the "Teleport" -->
-            <button type="submit" class="login-btn">Login & Play</button>
-
-            <p class="footer-text">
-                Want to skip? <a href="https://miraj-dev123.github.io/game/">Click here</a>
-            </p>
+            <button type="submit" class="teleport-btn">ENTER GAME</button>
         </form>
     </div>
 
     <script>
-        // The "Teleport" Script
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevents the page from refreshing
+        // This script handles the "Teleport" to your game
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Stop the form from reloading the page
             
-            // Teleport the user to the game
+            // THE TELEPORT DESTINATION
             window.location.href = "https://miraj-dev123.github.io/game/";
         });
     </script>
 
 </body>
 </html>
+
